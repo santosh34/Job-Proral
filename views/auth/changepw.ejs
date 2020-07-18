@@ -1,0 +1,65 @@
+<%- include('../partials/header.ejs') %> 
+
+<%- include('../partials/loginnav.ejs') %> 
+
+
+<div class="container padding-bottom-3x mb-2 mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+
+
+           
+            <form   class="card mt-4" method="POST">
+              
+                <% if(hasErrors) {%>
+                           
+                    <div class="alert alert-danger">
+                       <a href="#" class="close" data-dismiss="alert" aria-label="close">
+                           &times;
+                       </a>
+                       <%= messages %>
+                        
+                    </div>
+                <% } %>
+           
+    
+            <% if(success){%>
+                <div class="alert alert-success">
+                  <strong> <%= success %></strong>
+                </div>
+                <% } %>
+        
+               
+              
+                <div class="card-body">
+                    <div class="form-group"> 
+                        <h2>Change Password</h2>
+                        <label for="email-for-pass">Old Password</label>
+                         <input type="password" class="form-control" type="oldpw"  name="oldpw">
+                       </div>
+                </div>
+                
+                <div class="card-body">
+                    <div class="form-group">
+                         <label for="cpassword">New Password</label>
+                          <input type="password" class="form-control"  name="newpw">
+                         </div>
+                </div>
+              
+                <div class="card-body">
+                    <div class="form-group">
+                         <label for="cpassword">Confirm Password</label>
+                          <input type="password" class="form-control" type="cpw"  name="changepw">
+                         </div>
+                </div>
+              
+                <div class="card-footer"> <button class="btn btn-success" type="submit">Password Reset</button> 
+                   
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer.ejs') %> 
+
